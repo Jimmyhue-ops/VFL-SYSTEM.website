@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="admin.css">
+
+    <!-- EmailJS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "VRmOCHDfUhTEiKLmO",
+      });
+   })();
+</script>
+    <script>
+        (function(){
+            emailjs.init("VRmOCHDfUhTEiKLmO");
+        })();
+    </script>
+
+</head>
+<body>
+
+<header>
+    <h1>Admin - Complaint Approval</h1>
+</header>
+
+<div class="container">
+    <h2>Received Complaints</h2>
+
+    <button id="clearAllBtn" class="clear-btn">Remove All Records</button>
+
+    <table id="reportTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Grade</th>
+                <th>Reason</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+<!-- POPUP FOR MEETING DATE -->
+<div id="meetingPopup" class="popup">
+    <div class="popup-content">
+        <h3>Set Meeting Date & Time</h3>
+
+        <label>Meeting Date:</label>
+        <input type="date" id="meetingDate">
+
+        <label>Meeting Time:</label>
+        <input type="time" id="meetingTime">
+
+        <button id="saveMeetingBtn" class="save-btn">Save & Send Email</button>
+        <button onclick="closePopup()" class="cancel-btn">Cancel</button>
+    </div>
+</div>
+<script src="admin.js"></script>
+</body>
+</html>
